@@ -30,7 +30,12 @@ public enum BaseResponseStatus {
     POST_USERS_INVALID_EMAIL(false, 2016, "이메일 형식을 확인해주세요."),
     POST_USERS_EXISTS_EMAIL(false,2017,"중복된 이메일입니다."),
 
-
+    POSTS_EMPTY_POST_ID(false, 2018, "존재하지 않는 글입니다."),
+    POSTS_EMPTY_USER_POST(false, 2019, "존재하지 않는 유저의 글입니다."),
+    MODIFY_FAIL_POST(false, 2020, "글 수정하기를 실패했습니다."),
+    DELETE_FAIL_POST(false, 2021, "글 삭제하기를 실패했습니다."),
+    POST_POSTS_EMPTY_CONTENTS(false, 2022, "포스트하려는 내용이 없습니다."),
+    POST_POSTS_EMPTY_IMGRUL(false, 2023, "포스트하려는 이미지url이 없습니다."),
 
     /**
      * 3000 : Response 오류

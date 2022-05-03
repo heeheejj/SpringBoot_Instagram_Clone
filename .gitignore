@@ -42,3 +42,14 @@
 #src/main/resources/application-aws.properties
 #src/main/resources/logback-spring.xml
 #src/test/
+gradle/
+.idea/.gitignore
+.idea/.name
+.idea/compiler.xml
+.idea/gradle.xml
+.idea/jarRepositories.xml
+.idea/misc.xml
+.idea/uiDesigner.xml
+.idea/vcs.xml
+build/
+src/main/resources/application.yml
