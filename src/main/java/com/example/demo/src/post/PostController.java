@@ -38,21 +38,33 @@ public class PostController {
     }
 
 
-
-
     @ResponseBody
     @GetMapping("")
-    public BaseResponse<List<GetPostsRes>> getPosts(){
+    public BaseResponse<List<GetPostsRes>> getPosts(@RequestParam int userIdx){
         try{
-            //jwt에서 idx 추출.
-            int userIdxByJwt = jwtService.getUserIdx();
-            List<GetPostsRes> getPosts=postProvider.retrievePosts(userIdxByJwt);
+//            //jwt에서 idx 추출.
+//            int userIdxByJwt = jwtService.getUserIdx();
+            List<GetPostsRes> getPosts=postProvider.retrievePosts(userIdx);
 
             return new BaseResponse<>(getPosts);
         } catch (BaseException exception){
             return new BaseResponse<>(exception.getStatus());
         }
     }
+
+//    @ResponseBody
+//    @GetMapping("")
+//    public BaseResponse<List<GetPostsRes>> getPosts(){
+//        try{
+//            //jwt에서 idx 추출.
+//            int userIdxByJwt = jwtService.getUserIdx();
+//            List<GetPostsRes> getPosts=postProvider.retrievePosts(userIdxByJwt);
+//
+//            return new BaseResponse<>(getPosts);
+//        } catch (BaseException exception){
+//            return new BaseResponse<>(exception.getStatus());
+//        }
+//    }
 
     @ResponseBody
     @PostMapping("")

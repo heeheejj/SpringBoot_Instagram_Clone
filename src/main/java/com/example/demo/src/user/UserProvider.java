@@ -2,6 +2,7 @@ package com.example.demo.src.user;
 
 
 import com.example.demo.config.BaseException;
+import com.example.demo.src.post.model.GetPostsRes;
 import com.example.demo.src.user.model.GetUserFeedRes;
 import com.example.demo.src.user.model.GetUserInfoRes;
 import com.example.demo.src.user.model.GetUserPostsRes;
@@ -53,7 +54,7 @@ public class UserProvider {
         catch (Exception exception) {
             throw new BaseException(DATABASE_ERROR);
         }
-                    }
+    }
 
 
     public GetUserRes getUsersByIdx(int userIdx) throws BaseException{

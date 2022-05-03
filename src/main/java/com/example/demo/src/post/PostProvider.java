@@ -93,4 +93,5 @@ public class PostProvider {
             throw new BaseException(DATABASE_ERROR);
         }
     }
+
 }
