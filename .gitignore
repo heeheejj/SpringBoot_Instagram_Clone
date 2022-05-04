@@ -1,47 +1,49 @@
-## Created by .ignore support plugin (hsz.mobi)
-#.gradle
-#/build/
-#!gradle/wrapper/gradle-wrapper.jar
-#
-#### STS ###
-#.apt_generated
-#.classpath
-#.factorypath
-#.project
-#.settings
-#.springBeans
-#
-#### IntelliJ IDEA ###
-#.idea
-#*.iws
-#*.iml
-#*.ipr
-#
-#### NetBeans ###
-#nbproject/private/
-#build/
-#nbbuild/
-#dist/
-#nbdist/
-#.nb-gradle/
-#
-## application.yml
-#application.yml
-#.DS_Store
-#.gitignore
-#README.md
-#build.gradle
-#gradle/
-#gradlew
-#gradlew.bat
-#logs/
-#settings.gradle
-#src/.DS_Store
-#src/main/.DS_Store
-#src/main/java/
-#src/main/resources/application-aws.properties
-#src/main/resources/logback-spring.xml
-#src/test/
+# Created by .ignore support plugin (hsz.mobi)
+.gradle
+/build/
+!gradle/wrapper/gradle-wrapper.jar
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# application.yml
+application.yml
+.DS_Store
+.gitignore
+README.md
+build.gradle
+gradle/
+gradlew
+gradlew.bat
+logs/
+settings.gradle
+src/.DS_Store
+src/main/.DS_Store
+src/main/java/
+src/main/resources/application-aws.properties
+src/main/resources/logback-spring.xml
+src/test/
+
+
 gradle/
 .idea/.gitignore
 .idea/.name
@@ -53,3 +55,4 @@ gradle/
 .idea/vcs.xml
 build/
 src/main/resources/application.yml
+.gradle/

@@ -36,6 +36,7 @@ public enum BaseResponseStatus {
     DELETE_FAIL_POST(false, 2021, "글 삭제하기를 실패했습니다."),
     POST_POSTS_EMPTY_CONTENTS(false, 2022, "포스트하려는 내용이 없습니다."),
     POST_POSTS_EMPTY_IMGRUL(false, 2023, "포스트하려는 이미지url이 없습니다."),
+    POST_POSTS_INVALID_CONTENTS(false, 2024, "포스트의 글자수를 확인해주세요."),
 
     /**
      * 3000 : Response 오류

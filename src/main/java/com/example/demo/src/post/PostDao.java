@@ -133,7 +133,7 @@ public class PostDao {
     }
 
     // 게시글 작성
-    public int insertPost(int userIdx, PostPostReq postPostReq){
+    public int insertPosts(int userIdx, PostPostReq postPostReq){
         String insertPostQuery =
                 "        INSERT INTO Post(userIdx, content)\n" +
                         "        VALUES (?, ?);";
@@ -168,7 +168,7 @@ public class PostDao {
     }
 
     //게시글 삭제
-    public int updatePostStatus(int postIdx){
+    public int deletePost(int postIdx){
         String deleteUserQuery = "UPDATE Post\n" +
                 "        SET status = 'INACTIVE'\n" +
                 "        WHERE postIdx = ? ";

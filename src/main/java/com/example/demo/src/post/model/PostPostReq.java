@@ -10,7 +10,7 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 public class PostPostReq {
-
+    private int userIdx;
     private String content;
     private List<PostImgsUrlReq> postImgsUrl;
 }

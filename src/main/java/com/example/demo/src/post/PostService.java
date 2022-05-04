@@ -1,9 +1,7 @@
 package com.example.demo.src.post;
 
 import com.example.demo.config.BaseException;
-import com.example.demo.config.secret.Secret;
 import com.example.demo.src.post.model.*;
-import com.example.demo.src.user.model.PatchUserReq;
 //import com.example.demo.utils.AES128;
 import com.example.demo.utils.JwtService;
 import org.slf4j.Logger;
@@ -36,7 +34,7 @@ public class PostService {
 
 
         try{
-            int postIdx = postDao.insertPost(userIdx, postPostReq);
+            int postIdx = postDao.insertPosts(userIdx, postPostReq);
             for(int i=0; i< postPostReq.getPostImgsUrl().size(); i++) {
                 postDao.insertPostImgs(postIdx, postPostReq.getPostImgsUrl().get(i));
             }
@@ -69,20 +67,20 @@ public class PostService {
         }
     }
 
-    // 회원 삭제
-    public void deletePost(int userIdx,int postIdx) throws BaseException {
-        if(postProvider.checkUserExist(userIdx) ==0){
-            throw new BaseException(USERS_EMPTY_USER_ID);
-        }
+    // 게시물 삭제
+    public void deletePost(int postIdx) throws BaseException {
+//        if(postProvider.checkUserExist(userIdx) ==0){
+//            throw new BaseException(USERS_EMPTY_USER_ID);
+//        }
         if(postProvider.checkPostExist(postIdx) ==0){
             throw new BaseException(POSTS_EMPTY_POST_ID);
         }
 
-        if(postProvider.checkUserPostExist(userIdx, postIdx)==0){
-            throw new BaseException(POSTS_EMPTY_USER_POST);
-        }
+//        if(postProvider.checkUserPostExist(userIdx, postIdx)==0){
+//            throw new BaseException(POSTS_EMPTY_USER_POST);
+//        }
         try{
-            int result = postDao.updatePostStatus(postIdx);
+            int result = postDao.deletePost(postIdx);
             if(result == 0){
                 throw new BaseException(DELETE_FAIL_POST);
             }

@@ -73,15 +73,16 @@ public class PostController {
             return new BaseResponse<>(POST_POSTS_EMPTY_CONTENTS);
         }
         if(postPostReq.getContent().length()>450){
-            return new BaseResponse<>(POST_POSTS_EMPTY_CONTENTS);
+            return new BaseResponse<>(POST_POSTS_INVALID_CONTENTS);
         }
         if(postPostReq.getPostImgsUrl().size()<1){
             return new BaseResponse<>(POST_POSTS_EMPTY_IMGRUL);
         }
 
         try{
-            int userIdxByJwt = jwtService.getUserIdx();
-            PostPostRes postPostRes = postService.createPost(userIdxByJwt,postPostReq);
+//            int userIdxByJwt = jwtService.getUserIdx();
+
+            PostPostRes postPostRes = postService.createPost(postPostReq.getUserIdx(),postPostReq);
             return new BaseResponse<>(postPostRes);
         } catch(BaseException exception){
             return new BaseResponse<>((exception.getStatus()));
@@ -96,13 +97,13 @@ public class PostController {
             return new BaseResponse<>(POST_POSTS_EMPTY_CONTENTS);
         }
         if(patchPostReq.getContent().length()>450){
-            return new BaseResponse<>(POST_POSTS_EMPTY_CONTENTS);
+            return new BaseResponse<>(POST_POSTS_INVALID_CONTENTS);
         }
         try {
             //jwt에서 idx 추출.
-            int userIdxByJwt = jwtService.getUserIdx();
+//            int userIdxByJwt = jwtService.getUserIdx();
 
-            postService.modifyPost(userIdxByJwt,postIdx,patchPostReq);
+            postService.modifyPost(patchPostReq.getUserIdx(),postIdx,patchPostReq);
             String result = "회원정보 수정을 완료하였습니다.";
             return new BaseResponse<>(result);
         } catch (BaseException exception) {
@@ -116,9 +117,9 @@ public class PostController {
     public BaseResponse<String> deleteUser(@PathVariable("postIdx") int postIdx){
         try {
 
-            //jwt에서 idx 추출.
-            int userIdxByJwt = jwtService.getUserIdx();
-            postService.deletePost(userIdxByJwt,postIdx);
+//            //jwt에서 idx 추출.
+//            int userIdxByJwt = jwtService.getUserIdx();
+            postService.deletePost(postIdx);
 
             String result = "삭제되었습니다.";
             return new BaseResponse<>(result);
