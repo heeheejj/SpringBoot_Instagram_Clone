@@ -28,15 +28,11 @@ public class PostController {
     @Autowired
     private final JwtService jwtService;
 
-
-
-
     public PostController(PostProvider postProvider, PostService postService, JwtService jwtService){
         this.postProvider = postProvider;
         this.postService = postService;
         this.jwtService = jwtService;
     }
-
 
     @ResponseBody
     @GetMapping("")
